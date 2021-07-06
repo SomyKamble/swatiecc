@@ -8,6 +8,7 @@ django-bootstrap3==12.1.0
 django-timezone-field==4.0
 djangorestframework==3.11.0
 Faker==4.1.0
+tinyec
 gunicorn==20.0.4
 psycopg2==2.8.5
 python-dateutil==2.8.1
