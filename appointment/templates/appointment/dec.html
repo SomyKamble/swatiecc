@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Decrypt File</h2>
+
+    {% if page_title %}
+    <h3>Following Keys will be used for Decryption of the file</h3>
+    <h4> Private key : </h4>{{page_title.private_key}}
+    <h4> Public key  : </h4>{{page_title.public_key}}
+
+    <p>
+    <a href="{{Orders.file.url}}" class="btn btn-success"> Decrypt the file</a>
+    {% else %}
+    <h1> please create keys first </h1>
+    {% endif %}
+</div>
+
+{% endblock %}

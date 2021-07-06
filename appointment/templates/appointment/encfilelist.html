@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Your Enc files</h2>
+    <div>
+
+        <table class="table table-striped">
+            <thead>
+<!--                <th>Date</th>-->
+                <th>File</th>
+                <th>Encrypted File</th>
+                <th>Emp Name</th>
+                <th>Date</th>
+            </thead>
+            {% for obj in Orders %}
+            <tr>
+<!--                <td>{{ obj.to_user }}</td>-->
+<!--                <td><a href="{{ obj.file.url }}" class="btn btn-success">Decrypt and Download</a></td>-->
+                <td><a href="/dec/{{obj.pk}}" class="btn btn-success">Decrypt and Download</a></td>
+                <td><a href="/media/files/enc.csv" class="btn btn-info">Encrypted File Download</a></td>
+                <td>{{ obj.from_user }}</td>
+                <td>{{ obj.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+<!--        -->
+<!--        {% if user.is_doctor %}-->
+<!--        <table class="table table-striped">-->
+<!--            <thead>-->
+<!--                <th>Date</th>-->
+<!--                <th>Time</th>-->
+<!--                <th>Patient Info</th>-->
+<!--            </thead>-->
+<!--            {% for obj in object_list %}-->
+<!--            <tr>-->
+<!--                <td>{{ obj.date }}</td>-->
+<!--                <td>{{ obj.time }}</td>-->
+<!--                <td>{{ obj.patient }}</td>-->
+<!--            </tr>-->
+<!--            {% endfor %}-->
+<!--        </table>-->
+<!--        {% endif %}-->
+    </div>
+</div>
+{% endblock %}
